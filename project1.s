@@ -12,6 +12,20 @@ main:
  # get input from the user
  li, $v0, 8
  la $a0, userInput
- li $a1, 10
+ li $a1, 10 # maximum character allowed
  syscall
+
+# commit
+# we move the input from $a0 to temporary register $t1
+move $t1, $a0
+
+# we load the first character of the input to a new register $t2
+lb $t2, 0($t1)
+
+# we also keep track of the iteration through each element
+iteration: 
+  addi $t1, $t1, 1 # we add 1 to iterate through each element in the input
+  lb $t2, 0($t1)
+  
+
 

@@ -22,7 +22,11 @@ move $t1, $a0
 # we load the first character of the input to a new register $t2
 lb $t2, 0($t1)
 
+test: 
+  bge $t3, 10, end
+
 # we create three labels: uppercase, lowercase and numbers and jump to them based on the character read
+  addi $t3, $t3, 1
   bge $t2, 97,lowercase
   bge $t2, 65, uppercase
   bge $t2, 48, number
@@ -35,10 +39,14 @@ iteration:
 # commit 
 
 
-uppercase:
+uppercase: 
+ 
 
 lowercase:
  
 numbers:   
+
+end:
+
 
 

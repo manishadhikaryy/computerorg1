@@ -44,7 +44,9 @@ uppercase:
   bge $t2, 83, iteration
   sub $t4, $t2, 55
   andi $t5, $t3, 1 
-  
+  bnez $t5, odd
+  add $t6, $t6, $t4
+  j iteration
  
 lowercase:
  
@@ -53,4 +55,5 @@ numbers:
 end:
 
 odd:
-
+ add $t7, $t7, $t4
+ j iteration 

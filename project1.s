@@ -60,9 +60,13 @@ numbers:
   bge $t2, 58, iteration
   sub $t4, $t2, 48
   andi $t5, $t3, 1 
-  bnez $t5, odd   
+  bnez $t5, odd  
+  add $t6, $t6, $t4
+  j iteration  
 
 end:
+  sub $t7, $t7, $t6
+  
 
 odd:
  add $t7, $t7, $t4

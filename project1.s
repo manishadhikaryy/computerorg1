@@ -5,7 +5,8 @@
 
 .data
   # allocate 10 character space for input from the user
-  userInput: .space 10 
+  userInput: .space 11
+  newline: .asciiz "\n"
 
 .text
 main:
@@ -66,6 +67,11 @@ numbers:
 
 end:
   sub $t7, $t7, $t6
+  
+  # print new line
+  li $v0, 4
+  la $a0, newline
+  syscall
   
   # print
   li $v0, 1

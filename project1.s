@@ -67,6 +67,14 @@ numbers:
 end:
   sub $t7, $t7, $t6
   
+  # print
+  li $v0, 1
+  move $a0, $t7
+  syscall
+    
+  # exit the program
+  li $v0, 10
+  syscall
 
 odd:
  add $t7, $t7, $t4

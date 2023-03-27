@@ -29,24 +29,28 @@ test:
   addi $t3, $t3, 1
   bge $t2, 97,lowercase
   bge $t2, 65, uppercase
-  bge $t2, 48, number
+  bge $t2, 48, numbers
 
 # we also keep track of the iteration through each element
 iteration: 
   addi $t1, $t1, 1 # we add 1 to iterate through each element in the input
   lb $t2, 0($t1)
+  j test
   
 # commit 
+  
 
-
-uppercase: 
+uppercase:
+  bge $t2, 83, iteration
+  sub $t4, $t2, 55
+  andi $t5, $t3, 1 
+  
  
-
 lowercase:
  
 numbers:   
 
 end:
 
-
+odd:
 

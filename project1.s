@@ -12,7 +12,7 @@ main:
  # get input from the user
  li, $v0, 8
  la $a0, userInput
- li $a1, 10 # maximum character allowed
+ li $a1, 11 # maximum character allowed
  syscall
 
 # commit
